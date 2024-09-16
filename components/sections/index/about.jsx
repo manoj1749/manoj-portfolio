@@ -38,23 +38,34 @@ export default function About() {
 					</div>
 					<div className={about.copy} >
 						<CopyBlock 
-							title="Softskills that pay the bills"
+							title="Tech Skills That Power Innovation"
 							containerClass={about.container}
 							iconClass={about.icon}
-							icon={[ 'fad', 'laptop-code' ]}
-							copy="In addition to my design and technical expertise—I also have strong leadership, time management, and multitasking skills—honed through my experience as a business owner / managing partner, husband, and father of two. Outside of work, I enjoy staying active through sports such as hockey and snowboarding. I am confident in my ability to bring passion and value to any project."
+							icon={[ 'fad', 'microchip' ]}
+							copy="In addition to my expertise in machine learning and app development, I excel in problem-solving, quick adaptation, and a passion for tackling real-world challenges. With a history of balancing research and practical application, I drive meaningful solutions that make an impact."
 						/>
 						<BadgesBlock 
-							title="Reasearch and planning" 
+							title="Strategic Development & Research" 
 							containerClass={about.container}
 							list={methods} 
 							fullContainer="fullContainer"
 							block="methods" 
-							icon={[ 'fad', 'chart-line' ]}
-							copy="One of my favorite aspects of creating is planning the architecture of a project. From Design Systems to Brand Strategy—I enjoy working with the many touch points of user experience."
-							//invertedColor="invertedColor"
+							icon="lightbulb"
+							copy="I thrive on building systems from the ground up—whether it's designing product strategies, creating development architectures, or diving deep into user research. My strategic approach is grounded in data and guided by experience."
+							invertedColor="invertedColor"
 							headerIcon={`${about.icon}`}
 						/>
+						<BadgesBlock 
+    title="Achievements & Recognition" 
+    containerClass={about.container}
+    list={achievements} 
+    fullContainer="fullContainer"
+    block="achievements" 
+    icon="trophy"
+    copy="Recognized for my innovative work and dedication, here are some highlights of my journey."
+    invertedColor="invertedColor"
+    headerIcon={`${about.icon}`}
+/>
 					</div>
 				</section>	
 			</Container>
@@ -63,10 +74,19 @@ export default function About() {
 }
 
 const methods 	= [
-	{ key: 'planet-moon', 		name: 'User Research', 		type: 'fad' },
-	{ key: 'qrcode', 			name: 'Digital Strategy', 	type: 'fad' },
-	{ key: 'window', 			name: 'Design Systems', 	type: 'fad' },
-	{ key: 'cubes', 			name: 'Product Strategy', 	type: 'far' },
-	{ key: 'layer-plus', 		name: 'Brand Strategy', 	type: 'fad' },
-	{ key: 'solar-system', 		name: 'Operations', 		type: 'fad' },
+	{ key: 'puzzle-piece', 		name: 'Problem-Solving', 		type: 'fad' },
+	{ key: 'database', 			name: 'Data-Driven Strategies', 	type: 'fad' },
+	{ key: 'network-wired', 			name: 'System Architecture', 	type: 'fad' },
+	{ key: 'user-tie', 			name: 'Project Leadership', 	type: 'far' },
+	{ key: 'hands-helping', 		name: 'Collaborative Innovation', 	type: 'fad' },
+	{ key: 'book-open', name: 'Continuous Learning', type: 'fad' }
+	
 ]
+
+const achievements = [
+    { key: 'award', name: 'NASA Space Apps Challenge: Global Nominee', type: 'fad' },
+    { key: 'shield-alt', name: 'Kavach 2023: National Finalist', type: 'fad' },
+    { key: 'medal', name: 'Local Impact Award: NASA Space Apps Challenge', type: 'fad' },
+    { key: 'certificate', name: 'IEEE Conference Publication: LoRa Signal Analysis', type: 'fad' },
+    { key: 'trophy', name: 'Galactic Impact Award: Space Apps Challenge', type: 'fad' }
+];
