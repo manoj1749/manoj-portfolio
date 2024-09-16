@@ -1,0 +1,32 @@
+{
+	"intro": {
+		"start": "const Manoj = ( name, passion ) =>",
+		"end": "Hello, my name is",
+		"speed": 60,
+		"deletionSpeed": 80,
+		"wrapper": "h2",
+		"startDelay": 1000,
+		"deleteDelay": 3000,
+		"restartDelay": 12000
+	},
+
+	"header": {
+		"name": "Manoj Sadanala.",
+		"usp": "I build. It runs... most days."
+	},
+
+	"paragraph": "I’m a digital shapeshifter—always learning, always building, and leaving a trail of innovation (and the occasional bug).",
+
+	"buttons": {
+		"primary": {
+			"title": "Contact Me",
+			"url": "",
+			"leaveSite": false
+		},
+		"secondary": {
+			"title": "LinkedIn",
+			"url": "",
+			"leaveSite": "true"
+		}
+	}
+}
