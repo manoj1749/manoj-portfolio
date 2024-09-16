@@ -28,21 +28,20 @@ export default function About() {
 		<Section classProp={about.section}>	
 			<Container spacing={['verticalXXXLrg']}>
 				<SectionTitle
-					title="About Me"
-					preTitle="Synopsis"
-					subTitle="With a diverse skill set that includes UX design, UI design, full stack development, operational architecture, systems design, photography, and branding, I am a well-rounded digital professional."
+					title="About Me, Yes MEEE!!!"
+					preTitle="Bite-Sized Rundown"
+					subTitle="Skilled in diverse domains of ML🧠, Mobile Development📲, Web Development👨🏻‍💻, and had worked on bringing innovative ideas💡 in to practical tech solutions🛠️"
 				/>
 				<section className={about.content}>
 					<div className={about.image}>
-						{/* <img src="/img/family-photo.jpg" alt="Nelson family photo"/> */}
-						<Image src="/img/family-photo.jpg" width={600} height={800}/>
+						<Image src="/img/manoj.JPG" width={600} height={800}/>
 					</div>
 					<div className={about.copy} >
 						<CopyBlock 
 							title="Softskills that pay the bills"
 							containerClass={about.container}
 							iconClass={about.icon}
-							icon={[ 'fat', 'ear-listen' ]}
+							icon={[ 'fad', 'laptop-code' ]}
 							copy="In addition to my design and technical expertise—I also have strong leadership, time management, and multitasking skills—honed through my experience as a business owner / managing partner, husband, and father of two. Outside of work, I enjoy staying active through sports such as hockey and snowboarding. I am confident in my ability to bring passion and value to any project."
 						/>
 						<BadgesBlock 
@@ -51,7 +50,7 @@ export default function About() {
 							list={methods} 
 							fullContainer="fullContainer"
 							block="methods" 
-							icon="fingerprint"
+							icon={[ 'fad', 'chart-line' ]}
 							copy="One of my favorite aspects of creating is planning the architecture of a project. From Design Systems to Brand Strategy—I enjoy working with the many touch points of user experience."
 							//invertedColor="invertedColor"
 							headerIcon={`${about.icon}`}
