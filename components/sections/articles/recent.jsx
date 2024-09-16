@@ -23,7 +23,7 @@ export default function Recent({ mediumArticles }) {
 				/>
 				<div >
 					<p className="centered">
-						"Currently under construction! Still thinking how to make sense of it all... Stay tuned for more mind-boggling insights!"
+						Currently under construction! Still thinking how to make sense of it all... Stay tuned for more mind-boggling insights!
 					</p>
 				</div>
 				<style jsx>{`
