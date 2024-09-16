@@ -24,7 +24,6 @@ import '../node_modules/devicon/devicon.min.css'
 // Global css
 import '../styles/css/variables.css'
 import '../styles/css/global.css'
-import { Analytics } from "@vercel/analytics/react"
 /**
  * _app.jsx
  *
