@@ -92,20 +92,19 @@ export default function About() {
           >
             Dig In
           </button> */}
-    <Link
-    href="/detailed-introduction"
-    className={`button ${button.primary}`}
-    style={{
-      padding: "12px 50px",
-      borderRadius: "50px",
-      backgroundColor: "var(--secondary)",
-      color: "var(--background)",
-      textAlign: "center",
-      display: "inline-block"
-    }}
-  >
-    Dig In
-  </Link>
+          <Link
+            href="/detailed-introduction"
+            className={`button ${button.primary}`}
+            style={{
+              padding: "12px 50px",
+              borderRadius: "50px",
+              backgroundColor: "var(--secondary)",
+              color: "var(--background)",
+              textAlign: "center",
+            }}
+          >
+            Dig In
+          </Link>
         </section>
       </Container>
     </Section>
