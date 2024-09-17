@@ -155,3 +155,29 @@
 		}
 	}
 }
+
+.buttonSection {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+  }
+  
+  .button {
+	background-color: var(--secondary);
+	color: var(--background);
+	padding: 12px 50px;
+	border-radius: 50px; /* More rounded corners to match the image */
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	transition: background-color 1s ease; /* Slower transition */
+  }
+  
+  .button:hover {
+	background-color: var(--secondary-bright);
+  }
+  
+  
+ 
+  
+  

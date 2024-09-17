@@ -12,6 +12,7 @@ import SectionGridBg from "../../blocks/section.grid.block";
 // Section specific blocks
 import BadgesBlock from "../../blocks/about.badges.block";
 import CopyBlock from "../../blocks/about.copy.block";
+import button from "../../../styles/blocks/button.module.scss";
 
 // Section scss
 import about from "../../../styles/sections/index/about.module.scss";
@@ -67,6 +68,29 @@ export default function About() {
               headerIcon={`${about.icon}`}
             />
           </div>
+        </section>
+        {/* <section>
+          <button className={`button ${button.primary}`}>Dig In</button>
+        </section> */}
+        <section
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <button
+            className={`button ${button.primary}`}
+            style={{
+              padding: "12px 50px",
+              borderRadius: "50px",
+              backgroundColor: "var(--secondary)",
+              color: "var(--background)",
+              textAlign: "center",
+            }}
+          >
+            Dig In
+          </button>
         </section>
       </Container>
     </Section>
