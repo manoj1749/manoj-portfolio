@@ -1,5 +1,6 @@
 // Core packages
 import Image from "next/image";
+import Link from "next/link";
 
 // Section structure
 import Section from "../../structure/section";
@@ -79,7 +80,7 @@ export default function About() {
             alignItems: "center",
           }}
         >
-          <button
+          {/* <button
             className={`button ${button.primary}`}
             style={{
               padding: "12px 50px",
@@ -90,7 +91,21 @@ export default function About() {
             }}
           >
             Dig In
-          </button>
+          </button> */}
+    <Link
+    href="/detailed-introduction"
+    className={`button ${button.primary}`}
+    style={{
+      padding: "12px 50px",
+      borderRadius: "50px",
+      backgroundColor: "var(--secondary)",
+      color: "var(--background)",
+      textAlign: "center",
+      display: "inline-block"
+    }}
+  >
+    Dig In
+  </Link>
         </section>
       </Container>
     </Section>
