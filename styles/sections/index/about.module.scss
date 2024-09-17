@@ -200,3 +200,22 @@
   }
   
   
+  .flexContainer {
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem; // Adjust the gap between the left and right sections
+  }
+  
+  .leftColumn, .rightColumn {
+	flex: 1;
+  }
+  
+  .mergedBlock {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem; // Adjust the gap between the CopyBlock and BadgesBlock
+	padding: 1.5rem; // Adjust the padding for visual effect
+	background-color: var(--background-dim2); // Ensures it looks like one block
+	border-radius: 1rem;
+  }
+  

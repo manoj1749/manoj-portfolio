@@ -129,51 +129,7 @@ export default function DetailedIntroduction() {
     />
 
     <section className={`${about.content} ${about.container}`}>
-      <div className={about.flexRow}>
-        <div className={about.copy}>
-          {/* Achievements & Publications */}
-          <CopyBlock
-            title="Achievements & Publications"
-            icon={["fas", "trophy"]}
-            copy="I have been recognized in various global competitions and have contributed to the tech world through published research."
-            iconClass={about.icon}
-            containerClass={about.container}
-          />
-          <BadgesBlock
-            title="Competitions & Publications"
-            copy="Awards and recognitions from international platforms such as NASA Space Apps and published research papers in IEEE."
-            list={achievements}
-            block="achievements"
-            fullContainer="fullContainer"
-            icon="medal"
-            containerClass={about.container}
-            headerIcon={about.icon}
-          />
-        </div>
-
-        <div className={about.copy}>
-          {/* Workshops & Seminars */}
-          <CopyBlock
-            title="Workshops & Seminars"
-            icon={["fas", "chalkboard-teacher"]}
-            copy="Throughout my journey, I’ve shared my knowledge and expertise by conducting various workshops and seminars."
-            iconClass={about.icon}
-            containerClass={about.container}
-          />
-          <BadgesBlock
-            title="Workshops & Seminars I’ve Conducted"
-            copy="Fostering technical skills and guiding the next generation through hands-on workshops and community-driven events."
-            list={workshops}
-            block="workshops"
-            fullContainer="fullContainer"
-            icon="chalkboard"
-            containerClass={about.container}
-            headerIcon={about.icon}
-          />
-        </div>
-      </div>
-
-      {/* Image for Achievements */}
+         {/* Image for Achievements */}
       <div className={`${about.image} ${about.technicalSvg}`}>
         <Image
           src="/img/manoj.JPG"
@@ -181,6 +137,56 @@ export default function DetailedIntroduction() {
           height={500}
           alt="Achievements and Contributions"
         />
+      </div>
+      <div className={about.flexContainer}>
+        
+        {/* Left side - Achievements and Workshops */}
+        <div className={about.leftColumn}>
+          {/* Combine Achievements & Publications and Competitions & Publications */}
+          <div className={about.mergedBlock}>
+            <CopyBlock
+              title="Achievements & Publications"
+              icon={["fas", "trophy"]}
+              copy="I have been recognized in various global competitions and have contributed to the tech world through published research."
+              iconClass={about.icon}
+              containerClass={about.container}
+            />
+            <BadgesBlock
+              title="Competitions & Publications"
+              copy="Awards and recognitions from international platforms such as NASA Space Apps and published research papers in IEEE."
+              list={achievements}
+              block="achievements"
+              fullContainer="fullContainer"
+              icon="medal"
+              containerClass={about.container}
+              headerIcon={about.icon}
+            />
+          </div>
+        </div>
+
+        {/* Right side - Workshops and Contributions */}
+        <div className={about.rightColumn}>
+          {/* Combine Workshops & Seminars and Workshops & Seminars I've Conducted */}
+          <div className={about.mergedBlock}>
+            <CopyBlock
+              title="Workshops & Seminars"
+              icon={["fas", "chalkboard-teacher"]}
+              copy="Throughout my journey, I’ve shared my knowledge and expertise by conducting various workshops and seminars."
+              iconClass={about.icon}
+              containerClass={about.container}
+            />
+            <BadgesBlock
+              title="Workshops & Seminars I’ve Conducted"
+              copy="Fostering technical skills and guiding the next generation through hands-on workshops and community-driven events."
+              list={workshops}
+              block="workshops"
+              fullContainer="fullContainer"
+              icon="chalkboard"
+              containerClass={about.container}
+              headerIcon={about.icon}
+            />
+          </div>
+        </div>
       </div>
     </section>
   </Container>
