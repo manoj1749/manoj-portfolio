@@ -1,172 +1,203 @@
-import Image from 'next/image';
-import Section from '../../components/structure/section';
-import Container from '../../components/structure/container';
-import SectionTitle from '../../components/blocks/section.title.block';
-import CopyBlock from '../../components/blocks/about.copy.block';
-import BadgesBlock from '../../components/blocks/about.badges.block';
+import Image from "next/image";
+import Section from "../../components/structure/section";
+import Container from "../../components/structure/container";
+import SectionTitle from "../../components/blocks/section.title.block";
+import CopyBlock from "../../components/blocks/about.copy.block";
+import BadgesBlock from "../../components/blocks/about.badges.block";
+import Badges from "../../components/utils/badge.list.util";
+import career from "../../styles/sections/index/career.module.scss";
 import about from '../../styles/sections/index/about.module.scss';
+
 
 export default function DetailedIntroduction() {
   return (
-    <Section classProp={`${about.section} borderBottom`}>  
-      <Container spacing={['verticalXXXLrg']}>
+    <Section classProp={`${career.section} borderBottom`}>
+      <Container spacing={["verticalXXXLrg"]}>
         <SectionTitle
-          title="About Me"
-          preTitle="Who Am I?"
-          subTitle="From research to real-world applications, here's a glimpse into my journey."
+          title="Experience"
+          preTitle="Career"
+          subTitle="Here's a summary of my professional journey so far."
         />
-        
-        {/* Work Experience */}
-        <section className={about.content}>
-          <div className={about.copy}>
-            <CopyBlock 
-              title="Internships & Work Experience"
-              icon={[ 'fad', 'briefcase' ]}
-              copy="My hands-on internships and work experience have shaped me into a researcher and developer capable of solving complex problems with creative solutions."
-              iconClass={about.icon}
-              containerClass={about.container}
-            />
 
-            {/* Research Intern Experience */}
-            <BadgesBlock 
-              title="Research Intern - Amrita Mind and Brain Center"
-              copy="Worked on research based on GAIT of humans for building a device to accommodate movement for individuals affected by Parkinson's disease."
-              list={researchInternExperience}
-              block="researchIntern"
-              fullContainer="fullContainer"
-              icon="brain"
-              containerClass={about.container}
-              headerIcon={about.icon} 
-            />
+        {/* Work Experience Section */}
+        <section className={career.area}>
+          {/* Amrita Mind and Brain Center */}
+          <article className={career.company}>
+            <div className={career.companyContent}>
+              <span className={career.companyHeader}>
+                <h3>Amrita Mind and Brain Center</h3>
+                <h4>Research Intern</h4>
+                <h4>June 2024 – Present</h4>
+                <h5>Kollam, India</h5>
+              </span>
+              <p>
+                Working on research based on the GAIT of humans to build a
+                device for accommodating movement for individuals affected by
+                Parkinson's disease.
+              </p>
+            </div>
+            <div className={career.companyAlt}></div>
+          </article>
 
-            {/* Flutter Developer Experience */}
-            <BadgesBlock 
-              title="Flutter Developer - Ostello AI"
-              copy="Developed and managed a cross-platform mobile app with Flutter, NodeJS, and Firebase integration, and managed them on App Store/Play Store."
-              list={flutterDeveloperExperience}
-              block="flutterDeveloper"
-              fullContainer="fullContainer"
-              icon="mobile-alt"
-              containerClass={about.container}
-              headerIcon={about.icon} 
-            />
+          {/* amFOSS Experience */}
+          <article className={career.company}>
+            <div className={career.companyContent}>
+              <span className={career.companyHeader}>
+                <h3>amFOSS</h3>
+                <h4>Dec 2021 – May 2024</h4>
+                <h5>Kollam, India</h5>
+              </span>
+              <p>
+                amFOSS is an open-source student organization at Amrita Vishwa
+                Vidyapeetham. I contributed to various open-source projects and
+                mentored juniors in the group.
+              </p>
+            </div>
+            <div className={career.companyPositions}>
+              <div className={career.position}>
+                <div className={career.positionContent}>
+                  <span className={career.positionHeader}>
+                    <h3>Member</h3>
+                    <h4>Dec 2021 – Dec 2022</h4>
+                  </span>
+                  <p>
+                    Contributed to open-source projects, learned new
+                    technologies, and participated in various coding challenges
+                    and hackathons.
+                  </p>
+                </div>
+              </div>
+              <div className={career.position}>
+                <div className={career.positionContent}>
+                  <span className={career.positionHeader}>
+                    <h3>Mentor & Member</h3>
+                    <h4>Dec 2022 – May 2024</h4>
+                  </span>
+                  <p>
+                    Mentored juniors on multiple projects, guided open-source
+                    contributions, and organized workshops on emerging
+                    technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
 
-            {/* Hardware Security Researcher Experience */}
-            <BadgesBlock 
-              title="Hardware Security Researcher - Redantio"
-              copy="Developed and fine-tuned Deep Learning and Machine Learning models for their network security software."
-              list={securityResearchExperience}
-              block="securityResearcher"
-              fullContainer="fullContainer"
-              icon="shield-alt"
-              containerClass={about.container}
-              headerIcon={about.icon} 
-            />
+          {/* Redantio Experience */}
+          <article className={career.company}>
+            <div className={career.companyContent}>
+              <span className={career.companyHeader}>
+                <h3>Redantio</h3>
+                <h4>Hardware Security Researcher</h4>
+                <h4>July 2023 – Oct 2023</h4>
+                <h5>Remote</h5>
+              </span>
+              <p>
+                Worked on fine-tuning machine learning and deep learning models
+                for security software solutions.
+              </p>
+            </div>
+            <div className={career.companyAlt}></div>
+          </article>
 
-            {/* amFOSS Member Experience */}
-            <BadgesBlock 
-              title="Member & Mentor - amFOSS"
-              copy="Worked on open-source projects, mentored juniors, and contributed to innovative development in this open-source club."
-              list={amFossExperience}
-              block="amFoss"
-              fullContainer="fullContainer"
-              icon="users"
-              containerClass={about.container}
-              headerIcon={about.icon} 
-            />
-          </div>
-        </section> 
+          {/* Ostello AI */}
+          <article className={career.company}>
+            <div className={career.companyContent}>
+              <span className={career.companyHeader}>
+                <h3>Ostello AI</h3>
+                <h4>Flutter Developer</h4>
+                <h4>June 2023 – Sept 2023</h4>
+                <h5>Remote</h5>
+              </span>
+              <p>
+                Developed a cross-platform mobile app using Flutter, NodeJS, and
+                Firebase, managing the app's release on both App Store and Play
+                Store.
+              </p>
+            </div>
+            <div className={career.companyAlt}></div>
+          </article>
+        </section>
 
         {/* Achievements and Other Contributions */}
-        <section className={about.content}>
-          <div className={about.copy}>
-            <BadgesBlock 
-              title="Achievements & Publications"
-              copy="From international competitions to published work, these are the milestones that mark my career."
-              list={achievements}
-              block="achievements"
-              fullContainer="fullContainer"
-              icon="trophy"
-              containerClass={about.container}
-              headerIcon={about.icon} 
+        <Section classProp={`${about.section} borderBottom`}>
+          <Container spacing={["verticalXXXLrg"]}>
+            <SectionTitle
+              title="Achievements & Other Contributions"
+              preTitle="Recognition & Knowledge Sharing"
+              subTitle="My journey has been filled with awards, publications, and opportunities to share knowledge with the tech community."
             />
 
-            <BadgesBlock 
-              title="Workshops & Seminars"
-              copy="I love sharing my knowledge through workshops and seminars, helping others learn and explore new technologies."
-              list={workshops}
-              block="workshops"
-              fullContainer="fullContainer"
-              icon="chalkboard-teacher"
-              containerClass={about.container}
-              headerIcon={about.icon} 
-            />
+            <section className={`${about.content} ${about.container}`}>
+              <div className={about.copy}>
+                {/* Achievements & Publications */}
+                <CopyBlock
+                  title="Achievements & Publications"
+                  icon={["fas", "trophy"]}
+                  copy="I have been recognized in various global competitions and have contributed to the tech world through published research."
+                  iconClass={about.icon}
+                  containerClass={about.container}
+                />
+                <BadgesBlock
+                  title="Competitions & Publications"
+                  copy="Awards and recognitions from international platforms such as NASA Space Apps and published research papers in IEEE."
+                  list={achievements}
+                  block="achievements"
+                  fullContainer="fullContainer"
+                  icon="medal"
+                  containerClass={about.container}
+                  headerIcon={about.icon}
+                />
+              </div>
 
-            <BadgesBlock 
-              title="Community Outreach Programs"
-              copy="Participated in student-driven initiatives aimed at enriching the community with hands-on experience in electronics and simulations."
-              list={outreachPrograms}
-              block="outreachPrograms"
-              fullContainer="fullContainer"
-              icon="hands-helping"
-              containerClass={about.container}
-              headerIcon={about.icon} 
-            />
-          </div>
+              {/* Workshops & Seminars */}
+              <div className={about.copy}>
+                <CopyBlock
+                  title="Workshops & Seminars"
+                  icon={["fas", "chalkboard-teacher"]}
+                  copy="Throughout my journey, I’ve shared my knowledge and expertise by conducting various workshops and seminars."
+                  iconClass={about.icon}
+                  containerClass={about.container}
+                />
+                <BadgesBlock
+                  title="Workshops & Seminars I’ve Conducted"
+                  copy="Fostering technical skills and guiding the next generation through hands-on workshops and community-driven events."
+                  list={workshops}
+                  block="workshops"
+                  fullContainer="fullContainer"
+                  icon="chalkboard"
+                  containerClass={about.container}
+                  headerIcon={about.icon}
+                />
+              </div>
 
-          {/* Illustration */}
-          <div className={`${about.image}`}>
-            <Image src="/img/manoj.JPG" width={500} height={500} alt="Achievements" />
-          </div>
-        </section>  
+              {/* Image for Achievements */}
+              <div className={`${about.image} ${about.technicalSvg}`}>
+                <Image
+                  src="/img/manoj.JPG"
+                  width={477}
+                  height={500}
+                  alt="Achievements and Contributions"
+                />
+              </div>
+            </section>
+          </Container>
+        </Section>
       </Container>
     </Section>
   );
 }
 
-// Experience Details with Dates
-const researchInternExperience = [
-  { key: 'calendar', name: 'June 2024 – Present', type: 'fas' },
-  { key: 'brain', name: 'Research on Human Gait for Parkinson’s Disease', type: 'fas' },
-  { key: 'tools', name: 'Device Prototyping and Movement Assistance', type: 'fas' }
-];
-
-const flutterDeveloperExperience = [
-  { key: 'calendar', name: 'June 2023 – September 2023', type: 'fas' },
-  { key: 'mobile-alt', name: 'Flutter Development', type: 'fas' },
-  { key: 'cloud', name: 'Firebase Integration', type: 'fas' }
-];
-
-const securityResearchExperience = [
-  { key: 'calendar', name: 'July 2023 – October 2023', type: 'fas' },
-  { key: 'shield-alt', name: 'Deep Learning Models for Security', type: 'fas' },
-  { key: 'laptop-code', name: 'Machine Learning Fine-Tuning', type: 'fas' }
-];
-
-const amFossExperience = [
-  { key: 'calendar', name: 'December 2021 – May 2024', type: 'fas' },
-  { key: 'calendar-alt', name: 'Member (Dec 2021 – Dec 2022)', type: 'fas' },
-  { key: 'calendar-alt', name: 'Mentor & Member (Dec 2022 – May 2024)', type: 'fas' },
-  { key: 'project-diagram', name: 'Contributed to Open-Source Projects', type: 'fas' },
-  { key: 'users', name: 'Mentored Juniors', type: 'fas' }
-];
-
 // Achievements Badges
 const achievements = [
-  { key: 'award', name: 'NASA Space Apps Challenge 2023: Global Nominee', type: 'fas' },
-  { key: 'trophy', name: 'Galactic Impact Award: NASA Space Apps 2023', type: 'fas' },
-  { key: 'shield-alt', name: 'Kavach 2023: National Finalist', type: 'fas' },
-  { key: 'certificate', name: 'IEEE Publication on LoRa Signal Decoding', type: 'fas' },
-];
-
-// Workshops and Seminars Badges
-const workshops = [
-  { key: 'chalkboard', name: 'Workshop on Proteus and Hardware Components', type: 'fas' },
-  { key: 'book-reader', name: 'Hacktoberfest 2023', type: 'fas' },
-  { key: 'users', name: 'Mentorship Program for amFOSS Juniors', type: 'fas' },
-];
-
-// Community Outreach Programs Badges
-const outreachPrograms = [
-  { key: 'community', name: 'Student Social Responsibility: Hands-on Experience with Proteus and Simulations', type: 'fas' }
-];
+    { key: 'award', name: 'NASA Space Apps Challenge 2023: Global Nominee', type: 'fas' },
+    { key: 'trophy', name: 'Galactic Impact Award: NASA Space Apps 2023', type: 'fas' },
+    { key: 'shield-alt', name: 'Kavach 2023: National Finalist', type: 'fas' },
+    { key: 'certificate', name: 'IEEE Publication on LoRa Signal Decoding', type: 'fas' },
+  ];
+  
+  // Workshops and Seminars Badges
+  const workshops = [
+    { key: 'chalkboard', name: 'Workshop on Proteus and Hardware Components', type: 'fas' },
+    { key: 'book-reader', name: 'Hacktoberfest 2023', type: 'fas' },
+  ];
