@@ -33,7 +33,7 @@ export default function DetailedIntroduction() {
               <p>
                 Working on research based on the GAIT of humans to build a
                 device for accommodating movement for individuals affected by
-                Parkinson's disease.
+                Parkinson&apos;s disease.
               </p>
             </div>
             <div className={career.companyAlt}></div>
@@ -111,7 +111,7 @@ export default function DetailedIntroduction() {
               </span>
               <p>
                 Developed a cross-platform mobile app using Flutter, NodeJS, and
-                Firebase, managing the app's release on both App Store and Play
+                Firebase, managing the app&apos;s release on both App Store and Play
                 Store.
               </p>
             </div>
