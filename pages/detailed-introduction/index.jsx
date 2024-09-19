@@ -120,15 +120,13 @@ export default function DetailedIntroduction() {
           <article className={career.company}>
             <div className={career.companyContent}>
               <span className={career.companyHeader}>
-                <h3>Ostello AI</h3>
-                <h4>Flutter Developer</h4>
-                <h4>June 2023 – Sept 2023</h4>
+                <h3>CCExtractor</h3>
+                <h4>Open Source Contributor</h4>
+                <h4>Feb 2023 – Jun 2023</h4>
                 <h5>Remote</h5>
               </span>
               <p>
-                Developed a cross-platform mobile app using Flutter, NodeJS, and
-                Firebase, managing the app&apos;s release on both App Store and Play
-                Store.
+              Contributed to their open-source Flutter projects like Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter, and Flood Mobile by identifying, reporting, and resolving bugs, as well as resolving community-raised issues and added few features to one of their project.
               </p>
             </div>
             <div className={career.companyAlt}></div>
