@@ -6,8 +6,7 @@ import CopyBlock from "../../components/blocks/about.copy.block";
 import BadgesBlock from "../../components/blocks/about.badges.block";
 import Badges from "../../components/utils/badge.list.util";
 import career from "../../styles/sections/index/career.module.scss";
-import about from '../../styles/sections/index/about.module.scss';
-
+import about from "../../styles/sections/index/about.module.scss";
 
 export default function DetailedIntroduction() {
   return (
@@ -23,61 +22,83 @@ export default function DetailedIntroduction() {
         <section className={career.area}>
           {/* Amrita Mind and Brain Center */}
           <article className={career.company}>
-            <div className={career.companyContent}>
-              <span className={career.companyHeader}>
-                <h3>Amrita Mind and Brain Center</h3>
-                <h4>Research Intern</h4>
-                <h4>June 2024 – Present</h4>
-                <h5>Kollam, India</h5>
-              </span>
-              <p>
-                Working on research based on the GAIT of humans to build a
-                device for accommodating movement for individuals affected by
-                Parkinson&apos;s disease.
-              </p>
+            <div className={career.companyWrapper}>
+              {/* Left side - Paragraph */}
+              {/* <div className={career.description}>
+                <p>
+                  Working on research based on the GAIT of humans to build a
+                  device for accommodating movement for individuals affected by
+                  Parkinson's disease.
+                </p>
+              </div> */}
+
+              {/* Right side - Header and Titles */}
+              <div className={career.companyContent}>
+                <span className={career.companyHeader}>
+                  <h3>Amrita Mind and Brain Center</h3>
+                  <h4>Research Intern</h4>
+                  <h4>June 2024 – Present</h4>
+                  <h5>Kollam, India</h5>
+                </span>
+              </div>
+              <div className={career.description}>
+                <p>
+                  Working on research based on the GAIT of humans to build a
+                  device for accommodating movement for individuals affected by
+                  Parkinson's disease.
+                </p>
+              </div>
             </div>
-            <div className={career.companyAlt}></div>
           </article>
 
           {/* amFOSS Experience */}
           <article className={career.company}>
-            <div className={career.companyContent}>
+            <div className={career.companyWrapper}>
+              {/* Header Section */}
               <span className={career.companyHeader}>
                 <h3>amFOSS</h3>
                 <h4>Dec 2021 – May 2024</h4>
                 <h5>Kollam, India</h5>
               </span>
-              <p>
-                amFOSS is an open-source student organization at Amrita Vishwa
-                Vidyapeetham. I contributed to various open-source projects and
-                mentored juniors in the group.
-              </p>
-            </div>
-            <div className={career.companyPositions}>
-              <div className={career.position}>
-                <div className={career.positionContent}>
-                  <span className={career.positionHeader}>
-                    <h3>Member</h3>
-                    <h4>Dec 2021 – Dec 2022</h4>
-                  </span>
-                  <p>
-                    Contributed to open-source projects, learned new
-                    technologies, and participated in various coding challenges
-                    and hackathons.
-                  </p>
-                </div>
+
+              {/* Description Section */}
+              <div
+                className={`${career.description} ${career.amFossDescription}`}
+              >
+                <p>
+                  amFOSS is an open-source student organization at Amrita Vishwa
+                  Vidyapeetham. I contributed to various open-source projects
+                  and mentored juniors in the group.
+                </p>
               </div>
-              <div className={career.position}>
-                <div className={career.positionContent}>
-                  <span className={career.positionHeader}>
-                    <h3>Mentor & Member</h3>
-                    <h4>Dec 2022 – May 2024</h4>
-                  </span>
-                  <p>
-                    Mentored juniors on multiple projects, guided open-source
-                    contributions, and organized workshops on emerging
-                    technologies.
-                  </p>
+
+              {/* Positions Section */}
+              <div className={career.companyPositions}>
+                <div className={career.position}>
+                  <div className={career.positionContent}>
+                    <span className={career.positionHeader}>
+                      <h3>Member</h3>
+                      <h4>Dec 2021 – Dec 2022</h4>
+                    </span>
+                    <p>
+                      Contributed to open-source projects, learned new
+                      technologies, and participated in various coding
+                      challenges and hackathons.
+                    </p>
+                  </div>
+                </div>
+                <div className={career.position}>
+                  <div className={career.positionContent}>
+                    <span className={career.positionHeader}>
+                      <h3>Mentor & Member</h3>
+                      <h4>Dec 2022 – May 2024</h4>
+                    </span>
+                    <p>
+                      Mentored juniors on multiple projects, guided open-source
+                      contributions, and organized workshops on emerging
+                      technologies.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -97,7 +118,6 @@ export default function DetailedIntroduction() {
                 for security software solutions.
               </p>
             </div>
-            <div className={career.companyAlt}></div>
           </article>
 
           {/* Ostello AI */}
@@ -111,12 +131,12 @@ export default function DetailedIntroduction() {
               </span>
               <p>
                 Developed a cross-platform mobile app using Flutter, NodeJS, and
-                Firebase, managing the app&apos;s release on both App Store and Play
-                Store.
+                Firebase, managing the app&apos;s release on both App Store and
+                Play Store.
               </p>
             </div>
-            <div className={career.companyAlt}></div>
           </article>
+
           <article className={career.company}>
             <div className={career.companyContent}>
               <span className={career.companyHeader}>
@@ -126,10 +146,13 @@ export default function DetailedIntroduction() {
                 <h5>Remote</h5>
               </span>
               <p>
-              Contributed to their open-source Flutter projects like Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter, and Flood Mobile by identifying, reporting, and resolving bugs, as well as resolving community-raised issues and added few features to one of their project.
+                Contributed to their open-source Flutter projects like
+                Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter,
+                and Flood Mobile by identifying, reporting, and resolving bugs,
+                as well as resolving community-raised issues and adding a few
+                features to one of their projects.
               </p>
             </div>
-            <div className={career.companyAlt}></div>
           </article>
         </section>
 
@@ -144,10 +167,8 @@ export default function DetailedIntroduction() {
 
             <section className={`${about.content} ${about.container}`}>
               <div className={about.flexContainer}>
-                
                 {/* Left side - Achievements and Workshops */}
                 <div className={about.leftColumn}>
-                  {/* Combine Achievements & Publications and Competitions & Publications */}
                   <div className={about.mergedBlock}>
                     <CopyBlock
                       title="Achievements & Publications"
@@ -171,7 +192,6 @@ export default function DetailedIntroduction() {
 
                 {/* Right side - Workshops and Contributions */}
                 <div className={about.rightColumn}>
-                  {/* Combine Workshops & Seminars and Workshops & Seminars I've Conducted */}
                   <div className={about.mergedBlock}>
                     <CopyBlock
                       title="Workshops & Seminars"
@@ -196,7 +216,6 @@ export default function DetailedIntroduction() {
             </section>
           </Container>
         </Section>
-
       </Container>
     </Section>
   );
@@ -204,16 +223,31 @@ export default function DetailedIntroduction() {
 
 // Achievements Badges
 const achievements = [
-    { key: 'award', name: 'NASA Space Apps Challenge 2023: Global Nominee', type: 'fas' },
-    { key: 'trophy', name: 'Galactic Impact Award: NASA Space Apps 2023', type: 'fas' },
-    { key: 'shield-alt', name: 'Kavach 2023: National Finalist', type: 'fas' },
-    { key: 'certificate', name: 'IEEE Publication on LoRa Signal Decoding', type: 'fas' },
-  ];
-  
-  // Workshops and Seminars Badges
-  const workshops = [
-    { key: 'chalkboard', name: 'Workshop on Proteus and Hardware Components', type: 'fas' },
-    { key: 'book-reader', name: 'Hacktoberfest 2023', type: 'fas' },
-    { key: 'controller', name: 'FOSS-FEUD', type: 'fas' },
-  ];
+  {
+    key: "award",
+    name: "NASA Space Apps Challenge 2023: Global Nominee",
+    type: "fas",
+  },
+  {
+    key: "trophy",
+    name: "Galactic Impact Award: NASA Space Apps 2023",
+    type: "fas",
+  },
+  { key: "shield-alt", name: "Kavach 2023: National Finalist", type: "fas" },
+  {
+    key: "certificate",
+    name: "IEEE Publication on LoRa Signal Decoding",
+    type: "fas",
+  },
+];
 
+// Workshops and Seminars Badges
+const workshops = [
+  {
+    key: "chalkboard",
+    name: "Workshop on Proteus and Hardware Components",
+    type: "fas",
+  },
+  { key: "book-reader", name: "Hacktoberfest 2023", type: "fas" },
+  { key: "controller", name: "FOSS-FEUD", type: "fas" },
+];

@@ -152,3 +152,83 @@
 		}
 	}
 }
+
+.area {
+	display: flex;
+	flex-direction: column;
+	width: 100%; /* Ensures full width of the section */
+  }
+  
+  .company {
+	display: flex;
+	flex-direction: column;
+	width: 100%; /* Ensures the company section is full width */
+	margin-bottom: 2rem; /* Add some spacing between companies */
+  }
+  
+  .companyContent {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start; /* Aligns content to the left */
+	width: 100%;
+  }
+  
+  .position {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%; /* Ensures the position sections are full width */
+  }
+  
+  .companyWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;  /* Align content at the top */
+	
+	@media (max-width: 768px) {
+	  flex-direction: column;
+	}
+  }
+  
+  .description {
+	flex: 1;
+	margin-right: 2rem; /* Add spacing between the description and header */
+  
+	@media (max-width: 768px) {
+	  margin-right: 0;
+	  margin-bottom: 1rem;
+	}
+  }
+  
+  .companyContent {
+	flex: 1;
+  }
+  
+  .companyWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+  
+	@media (max-width: 768px) {
+	  flex-direction: column;
+	}
+  }
+  
+  .description {
+	flex: 1;
+	margin-right: 2rem;
+  
+	@media (max-width: 768px) {
+	  margin-right: 0;
+	  margin-bottom: 1rem;
+	}
+  }
+  
+  .amFossDescription {
+	padding-left: 2rem; /* Add extra space on the left */
+  }
+  
+  .companyContent {
+	flex: 1;
+  }
+  
