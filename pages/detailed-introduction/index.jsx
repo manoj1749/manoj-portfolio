@@ -45,7 +45,7 @@ export default function DetailedIntroduction() {
                 <p>
                   Working on research based on the GAIT of humans to build a
                   device for accommodating movement for individuals affected by
-                  Parkinson's disease.
+                  Parkinson&apos;s disease.
                 </p>
               </div>
             </div>
