@@ -39,11 +39,13 @@ export default function About() {
             <Image src="/img/manoj.JPG" width={600} height={800} />
           </div>
           <div className={about.copy}>
-            <CopyBlock
+            <BadgesBlock
               title="Tech Skills That Power Innovation"
               containerClass={about.container}
-              iconClass={about.icon}
-              icon={["fad", "microchip"]}
+              list={empty}
+              // iconClass={about.icon}
+              icon="microchip"
+              headerIcon={`${about.icon}`}
               copy="In addition to my expertise in machine learning and app development, I excel in problem-solving, quick adaptation, and a passion for tackling real-world challenges. With a history of balancing research and practical application, I drive meaningful solutions that make an impact."
             />
             <BadgesBlock
@@ -119,6 +121,8 @@ const methods = [
   { key: "hands-helping", name: "Collaborative Innovation", type: "fad" },
   { key: "book-open", name: "Continuous Learning", type: "fad" },
 ];
+
+const empty = [];
 
 const achievements = [
   {
