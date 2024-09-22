@@ -23,16 +23,6 @@ export default function DetailedIntroduction() {
           {/* Amrita Mind and Brain Center */}
           <article className={career.company}>
             <div className={career.companyWrapper}>
-              {/* Left side - Paragraph */}
-              {/* <div className={career.description}>
-                <p>
-                  Working on research based on the GAIT of humans to build a
-                  device for accommodating movement for individuals affected by
-                  Parkinson's disease.
-                </p>
-              </div> */}
-
-              {/* Right side - Header and Titles */}
               <div className={career.companyContent}>
                 <span className={career.companyHeader}>
                   <h3>Amrita Mind and Brain Center</h3>
@@ -45,7 +35,7 @@ export default function DetailedIntroduction() {
                 <p>
                   Working on research based on the GAIT of humans to build a
                   device for accommodating movement for individuals affected by
-                  Parkinson&apos;s disease.
+                  Parkinson's disease.
                 </p>
               </div>
             </div>
@@ -54,17 +44,14 @@ export default function DetailedIntroduction() {
           {/* amFOSS Experience */}
           <article className={career.company}>
             <div className={career.companyWrapper}>
-              {/* Header Section */}
-              <span className={career.companyHeader}>
-                <h3>amFOSS</h3>
-                <h4>Dec 2021 – May 2024</h4>
-                <h5>Kollam, India</h5>
-              </span>
-
-              {/* Description Section */}
-              <div
-                className={`${career.description} ${career.amFossDescription}`}
-              >
+              <div className={career.companyContent}>
+                <span className={career.companyHeader}>
+                  <h3>amFOSS</h3>
+                  <h4>Dec 2021 – May 2024</h4>
+                  <h5>Kollam, India</h5>
+                </span>
+              </div>
+              <div className={career.description}>
                 <p>
                   amFOSS is an open-source student organization at Amrita Vishwa
                   Vidyapeetham. I contributed to various open-source projects
@@ -72,86 +59,106 @@ export default function DetailedIntroduction() {
                 </p>
               </div>
 
-              {/* Positions Section */}
+              {/* Nested Sub-experiences */}
               <div className={career.companyPositions}>
-                <div className={career.position}>
+                {/* Member */}
+                <article className={career.position}>
                   <div className={career.positionContent}>
                     <span className={career.positionHeader}>
                       <h3>Member</h3>
                       <h4>Dec 2021 – Dec 2022</h4>
                     </span>
-                    <p>
-                      Contributed to open-source projects, learned new
-                      technologies, and participated in various coding
-                      challenges and hackathons.
-                    </p>
+                    <div className={career.description}>
+                      <p>
+                        Contributed to open-source projects, learned new
+                        technologies, and participated in various coding
+                        challenges and hackathons.
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className={career.position}>
+                </article>
+
+                {/* Mentor & Member */}
+                <article className={career.position}>
                   <div className={career.positionContent}>
                     <span className={career.positionHeader}>
                       <h3>Mentor & Member</h3>
                       <h4>Dec 2022 – May 2024</h4>
                     </span>
-                    <p>
-                      Mentored juniors on multiple projects, guided open-source
-                      contributions, and organized workshops on emerging
-                      technologies.
-                    </p>
+                    <div className={career.description}>
+                      <p>
+                        Mentored juniors on multiple projects, guided open-source
+                        contributions, and organized workshops on emerging
+                        technologies.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </article>
               </div>
             </div>
           </article>
 
           {/* Redantio Experience */}
           <article className={career.company}>
-            <div className={career.companyContent}>
-              <span className={career.companyHeader}>
-                <h3>Redantio</h3>
-                <h4>Hardware Security Researcher</h4>
-                <h4>July 2023 – Oct 2023</h4>
-                <h5>Remote</h5>
-              </span>
-              <p>
-                Worked on fine-tuning machine learning and deep learning models
-                for security software solutions.
-              </p>
+            <div className={career.companyWrapper}>
+              <div className={career.companyContent}>
+                <span className={career.companyHeader}>
+                  <h3>Redantio</h3>
+                  <h4>Hardware Security Researcher</h4>
+                  <h4>July 2023 – Oct 2023</h4>
+                  <h5>Remote</h5>
+                </span>
+              </div>
+              <div className={career.description}>
+                <p>
+                  Worked on fine-tuning machine learning and deep learning models
+                  for security software solutions.
+                </p>
+              </div>
             </div>
           </article>
 
           {/* Ostello AI */}
           <article className={career.company}>
-            <div className={career.companyContent}>
-              <span className={career.companyHeader}>
-                <h3>Ostello AI</h3>
-                <h4>Flutter Developer</h4>
-                <h4>June 2023 – Sept 2023</h4>
-                <h5>Remote</h5>
-              </span>
-              <p>
-                Developed a cross-platform mobile app using Flutter, NodeJS, and
-                Firebase, managing the app&apos;s release on both App Store and
-                Play Store.
-              </p>
+            <div className={career.companyWrapper}>
+              <div className={career.companyContent}>
+                <span className={career.companyHeader}>
+                  <h3>Ostello AI</h3>
+                  <h4>Flutter Developer</h4>
+                  <h4>June 2023 – Sept 2023</h4>
+                  <h5>Remote</h5>
+                </span>
+              </div>
+              <div className={career.description}>
+                <p>
+                  Developed a cross-platform mobile app using Flutter, NodeJS, and
+                  Firebase, managing the app&apos;s release on both App Store and
+                  Play Store.
+                </p>
+              </div>
             </div>
           </article>
 
+          {/* CCExtractor */}
           <article className={career.company}>
-            <div className={career.companyContent}>
-              <span className={career.companyHeader}>
-                <h3>CCExtractor</h3>
-                <h4>Open Source Contributor</h4>
-                <h4>Feb 2023 – Jun 2023</h4>
-                <h5>Remote</h5>
-              </span>
-              <p>
-                Contributed to their open-source Flutter projects like
-                Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter,
-                and Flood Mobile by identifying, reporting, and resolving bugs,
-                as well as resolving community-raised issues and adding a few
-                features to one of their projects.
-              </p>
+            <div className={career.companyWrapper}>
+              <div className={career.companyContent}>
+                <span className={career.companyHeader}>
+                  <h3>CCExtractor</h3>
+                  <h4>Open Source Contributor</h4>
+                  <h4>Feb 2023 – Jun 2023</h4>
+                  <h5>Remote</h5>
+                </span>
+              </div>
+              <div className={career.description}>
+                <p>
+                  Contributed to their open-source Flutter projects like
+                  Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter,
+                  and Flood Mobile by identifying, reporting, and resolving bugs,
+                  as well as resolving community-raised issues and adding a few
+                  features to one of their projects.
+                </p>
+              </div>
             </div>
           </article>
         </section>
