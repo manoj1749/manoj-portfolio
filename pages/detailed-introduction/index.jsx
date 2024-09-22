@@ -44,56 +44,54 @@ export default function DetailedIntroduction() {
           {/* amFOSS Experience */}
           <article className={career.company}>
             <div className={career.companyWrapper}>
-              <div className={career.companyContent}>
-                <span className={career.companyHeader}>
+              {/* Row containing Name, Date, and Description */}
+              <div className={career.companyHeaderWrapper}>
+                {/* Left-aligned Name and Date */}
+                <div className={career.companyContentLeft}>
                   <h3>amFOSS</h3>
                   <h4>Dec 2021 – May 2024</h4>
                   <h5>Kollam, India</h5>
-                </span>
+                </div>
+
+                {/* Right-aligned Description */}
+                <div className={career.companyContentRight}>
+                  <p>
+                    amFOSS is an open-source student organization at Amrita
+                    Vishwa Vidyapeetham. I contributed to various open-source
+                    projects and mentored juniors in the group.
+                  </p>
+                </div>
               </div>
-              <div className={career.description}>
-                <p>
-                  amFOSS is an open-source student organization at Amrita Vishwa
-                  Vidyapeetham. I contributed to various open-source projects
-                  and mentored juniors in the group.
-                </p>
+            </div>
+
+            {/* Sub-experiences */}
+            <div className={career.subExperienceWrapper}>
+              <div className={career.subExperience}>
+                <div className={career.positionHeader}>
+                  <h4>Member</h4>
+                  <h5>Dec 2021 – Dec 2022</h5>
+                </div>
+                <div className={career.description}>
+                  <p>
+                    Contributed to open-source projects, learned new
+                    technologies, and participated in various coding challenges
+                    and hackathons.
+                  </p>
+                </div>
               </div>
 
-              {/* Nested Sub-experiences */}
-              <div className={career.companyPositions}>
-                {/* Member */}
-                <article className={career.position}>
-                  <div className={career.positionContent}>
-                    <span className={career.positionHeader}>
-                      <h3>Member</h3>
-                      <h4>Dec 2021 – Dec 2022</h4>
-                    </span>
-                    <div className={career.description}>
-                      <p>
-                        Contributed to open-source projects, learned new
-                        technologies, and participated in various coding
-                        challenges and hackathons.
-                      </p>
-                    </div>
-                  </div>
-                </article>
-
-                {/* Mentor & Member */}
-                <article className={career.position}>
-                  <div className={career.positionContent}>
-                    <span className={career.positionHeader}>
-                      <h3>Mentor & Member</h3>
-                      <h4>Dec 2022 – May 2024</h4>
-                    </span>
-                    <div className={career.description}>
-                      <p>
-                        Mentored juniors on multiple projects, guided open-source
-                        contributions, and organized workshops on emerging
-                        technologies.
-                      </p>
-                    </div>
-                  </div>
-                </article>
+              <div className={career.subExperience}>
+                <div className={career.positionHeader}>
+                  <h4>Mentor & Member</h4>
+                  <h5>Dec 2022 – May 2024</h5>
+                </div>
+                <div className={career.description}>
+                  <p>
+                    Mentored juniors on multiple projects, guided open-source
+                    contributions, and organized workshops on emerging
+                    technologies.
+                  </p>
+                </div>
               </div>
             </div>
           </article>
@@ -111,8 +109,8 @@ export default function DetailedIntroduction() {
               </div>
               <div className={career.description}>
                 <p>
-                  Worked on fine-tuning machine learning and deep learning models
-                  for security software solutions.
+                  Worked on fine-tuning machine learning and deep learning
+                  models for security software solutions.
                 </p>
               </div>
             </div>
@@ -126,14 +124,13 @@ export default function DetailedIntroduction() {
                   <h3>Ostello AI</h3>
                   <h4>Flutter Developer</h4>
                   <h4>June 2023 – Sept 2023</h4>
-                  <h5>Remote</h5>
                 </span>
               </div>
               <div className={career.description}>
                 <p>
-                  Developed a cross-platform mobile app using Flutter, NodeJS, and
-                  Firebase, managing the app&apos;s release on both App Store and
-                  Play Store.
+                  Developed a cross-platform mobile app using Flutter, NodeJS,
+                  and Firebase, managing the app&apos;s release on both App
+                  Store and Play Store.
                 </p>
               </div>
             </div>
@@ -153,10 +150,10 @@ export default function DetailedIntroduction() {
               <div className={career.description}>
                 <p>
                   Contributed to their open-source Flutter projects like
-                  Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter,
-                  and Flood Mobile by identifying, reporting, and resolving bugs,
-                  as well as resolving community-raised issues and adding a few
-                  features to one of their projects.
+                  Taskwarrior-flutter, ccextractor-fluttergui,
+                  rutorrent-flutter, and Flood Mobile by identifying, reporting,
+                  and resolving bugs, as well as resolving community-raised
+                  issues and adding a few features to one of their projects.
                 </p>
               </div>
             </div>
