@@ -2,7 +2,6 @@
 
 // Section
 .section {
-
 	.content {
 		$padding: 2rem;
 		position: relative;
@@ -17,31 +16,6 @@
 		h3 {
 			position: relative;
 			color: var(--primary);
-
-			// &:before {
-			// 	content: '';
-			// 	position: absolute;
-			// 	left: calc( $padding * -1 );
-			// 	width: 18px;
-			// 	aspect-ratio: 1/1;
-			// 	background-color: var(--primary-bright);
-			// 	border-radius: 99rem;
-			// 	border: 3px solid var(--background);
-			// 	top: 50%;
-			// 	transform: translate(-50%, -50%);
-			// }
-
-			// &:after {
-			// 	content: '';
-			// 	position: absolute;
-			// 	left: calc( $padding * -1 );
-			// 	width: 9px;
-			// 	aspect-ratio: 1/1;
-			// 	background-color: var(--background);
-			// 	border-radius: 99rem;
-			// 	top: 50%;
-			// 	transform: translate(-50%, -50%);
-			// }
 		}
 
 		.container {
@@ -70,6 +44,7 @@
 			flex-basis: calc(60% + 1px);
 			flex-grow: 1;
 			flex-shrink: 1;
+			text-align: center; // Center-align text within each block
 		}
 
 		.icon {
@@ -80,6 +55,7 @@
 			width: fit-content;
 			border-radius: 0.5rem;
 			aspect-ratio: 1;
+			margin: 0 auto; // Center-align the icon
 
 			svg {
 				height: 1.6rem;
@@ -89,11 +65,8 @@
 					fill: url(#fa-gradient) #fff;
 				}
 			}
-
-
 		}
-		
-		// Columns
+
 		.image {
 			flex-basis: 50%;
 			flex-grow: 1;
@@ -113,10 +86,10 @@
 					position: relative !important;
 					overflow: visible !important;
 					height: 100% !important;
-					z-index: -1;	
+					z-index: -1;
 				}
-				img {    
-					overflow: visible;		
+				img {
+					overflow: visible;
 					filter: brightness(100%);
 				}
 			}
@@ -160,124 +133,122 @@
 	display: flex;
 	justify-content: center;
 	margin-top: 10px;
-  }
-  
-  .button {
+}
+
+.button {
 	background-color: var(--secondary);
 	color: var(--background);
 	padding: 12px 50px;
-	border-radius: 50px; /* More rounded corners to match the image */
+	border-radius: 50px;
 	text-decoration: none;
 	font-size: 20px;
 	font-weight: bold;
-	transition: background-color 1s ease; /* Slower transition */
-  }
-  
-  .button:hover {
+	transition: background-color 1s ease;
+}
+
+.button:hover {
 	background-color: var(--secondary-bright);
-  }
-  
-  
-  .section {
+}
+
+.section {
 	.container {
-	  display: flex;
-	  flex-wrap: wrap;
-	  justify-content: space-between; // Distribute the blocks horizontally
-	  gap: 20px; // Adjust the gap between blocks
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center; // Center align the blocks horizontally
+		gap: 20px;
 	}
-  
+
 	.copy {
-	  flex: 1 1 calc(50% - 20px); // Each block takes about 50% of the width, with some space between them
-	  min-width: 300px; // Ensures that the blocks don't shrink too much on smaller screens
+		flex: 1 1 calc(50% - 20px); // Each block takes about 50% of the width
+		min-width: 300px; // Ensures the blocks don't shrink too much on smaller screens
+		text-align: center; // Center-align text inside the blocks
 	}
-  
+
 	.image {
-	  flex: 1 1 100%; // Image takes full width in a new row below the blocks
-	  margin-top: 20px;
-	  display: flex;
-	  justify-content: center;
+		flex: 1 1 100%;
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
 	}
-  }
-  
-  
-  .flexContainer {
+}
+
+.flexContainer {
 	display: flex;
-	justify-content: space-between;
-	gap: 2rem; // Adjust the gap between the left and right sections
-  }
-  
-  .leftColumn, .rightColumn {
+	justify-content: center; // Center-align the left and right columns
+	gap: 2rem;
+}
+
+.leftColumn, .rightColumn {
 	flex: 1;
-  }
-  
-  .mergedBlock {
+	max-width: 500px; // Limit the width of each column to ensure centering
+	text-align: center; // Center-align the text in each column
+}
+
+.mergedBlock {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem; // Adjust the gap between the CopyBlock and BadgesBlock
-	padding: 1.5rem; // Adjust the padding for visual effect
-	background-color: var(--background-dim2); // Ensures it looks like one block
+	gap: 1rem;
+	padding: 1.5rem;
+	background-color: var(--background-dim2);
 	border-radius: 1rem;
-  }
-  
+	align-items: center; // Center-align content inside each block
+}
 
-  .flexContainer {
-	display: flex;
-	justify-content: space-between;
-	gap: 2rem;
-  
-	@media (max-width: 768px) {
-	  flex-direction: column;
-	  align-items: center;
+@include media($max: $mobile) {
+	.section {
+		.content {
+			flex-direction: column;
+
+			> div {
+				flex-basis: 100% !important;
+			}
+
+			.container {
+				padding: 2rem 1.25rem;
+			}
+
+			.image {
+				padding: 1rem;
+				&.technicalSvg {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					height: 140%;
+					z-index: -1;
+				}
+			}
+
+			.copy {
+				padding: 0;
+			}
+		}
 	}
-  }
-  
-  .leftColumn, .rightColumn {
-	flex: 1;
-  }
-  
-  .mergedBlock {
-	margin-bottom: 2rem;
-  }
-  
-  .image {
-	margin-bottom: 2rem;
-  
-	@media (max-width: 768px) {
-	  width: 100%;
-	  img {
-		width: 100%;
-		height: auto;
-	  }
+
+	.flexContainer {
+		flex-direction: column;
+		align-items: center; // Center-align content on small screens
 	}
-  }
-  
-  .flexContainer {
-	display: flex;
-	justify-content: space-between;
-	gap: 2rem;
-  
-	@media (max-width: 768px) {
-	  flex-direction: column;
-	  align-items: flex-start; /* Ensures left alignment on small screens */
+
+	.copy {
+		text-align: center;
 	}
-  }
-  
-  .leftColumn, .rightColumn {
-	flex: 1;
-  }
-  
-  .mergedBlock {
-	margin-bottom: 2rem;
-  }
-  
-  .image {
-	margin-bottom: 2rem;
-  
-	@media (max-width: 768px) {
-	  width: 100%;
-	  img {
-		width: 100%;
-		height: auto;
-	  }
+
+	.leftColumn, .rightColumn {
+		flex: 1;
+		width: 100%; // Make sure columns take full width on smaller screens
 	}
-  }
+
+	.mergedBlock {
+		margin-bottom: 2rem;
+	}
+
+	.image {
+		margin-bottom: 2rem;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
