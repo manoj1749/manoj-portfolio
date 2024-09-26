@@ -253,5 +253,5 @@ const workshops = [
     type: "fas",
   },
   { key: "book-reader", name: "Hacktoberfest 2023", type: "fas" },
-  { key: "controller", name: "FOSS-FEUD", type: "fas" },
+  { key: "gamepad", name: "FOSS-FEUD", type: "fas" },
 ];
