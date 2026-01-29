@@ -32,7 +32,7 @@ export default function Hero() {
 
 	return (
 		<Section classProp={`${hero.section}`}>
-			<Container spacing={'VerticalXXXL'}>
+			<Container spacing={'VerticalXXL'}>
 				<TypeAnimation className={`${hero.preHeader}`}
 					sequence={[
 						content.intro.startDelay,

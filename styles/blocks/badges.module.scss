@@ -23,6 +23,7 @@ $background: 	--background-dim2;
 	font-weight: 600;
 	font-size: var(--font-xs);
 	list-style: none;
+	background: transparent;
 
 	.item {
 		position: relative;
@@ -185,4 +186,15 @@ $background: 	--background-dim2;
 	overflow: hidden;
 	text-overflow: ellipsis; /* Adds '...' if the text overflows */
   }
+
+  .stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  background: transparent !important;
+  border: 0 !important;
+  }
+
   

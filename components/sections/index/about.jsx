@@ -28,7 +28,7 @@ import about from "../../../styles/sections/index/about.module.scss";
 export default function About() {
   return (
     <Section classProp={about.section}>
-      <Container spacing={["verticalXXXLrg"]}>
+      <Container spacing={["verticalXXLrg"]}>
         <SectionTitle
           title="About Me, Yes MEEE!!!"
           preTitle="Bite-Sized Rundown"

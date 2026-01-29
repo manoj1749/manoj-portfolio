@@ -1,0 +1,146 @@
+{
+"header": {
+  "preTitle": "Career",
+  "title": "Career Highlights",
+  "subTitle": ""
+},
+  "companies": [
+    {
+      "company": "Magnet Power Tech Solutions",
+      "type": "Freelance",
+      "location": "Coimbatore, Tamil Nadu, India",
+      "date": "Apr 2025 – Aug 2025",
+      "positions": [
+        {
+          "title": "Freelance Software Developer",
+          "date": "Apr 2025 – Aug 2025",
+          "highlights": [
+            "Built a Flutter-based Inventory Management System with Firebase backend for manufacturing workflows.",
+            "Delivered modules: Accounts, HR, Sales, Design, Planning, Purchase, Stores, Production, Quality.",
+            "Implemented real-time sync + offline-first (Hive) with online/offline reconciliation.",
+            "Designed secure auth + scalable Firestore collections; enabled PDF + CSV export and responsive UI."
+          ],
+          "stack": [
+            { "key": "flutter", "name": "Flutter", "type": "devicon" },
+            { "key": "firebase", "name": "Firebase", "type": "devicon" },
+            { "key": "dart", "name": "Dart", "type": "devicon" }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Go Eleventh Mile",
+      "type": "Internship / Startup",
+      "location": "Hyderabad, Telangana, India",
+      "date": "Nov 2024 – Jul 2025",
+      "positions": [
+        {
+          "title": "iOS App Developer (Flutter iOS)",
+          "date": "Apr 2025 – Jul 2025",
+          "highlights": [
+            "Spearheaded Flutter(iOS) work: ride tracking, odometer verification, Live Activities.",
+            "Improved performance and supported growth to 1,000+ users."
+          ],
+          "stack": [
+            { "key": "flutter", "name": "Flutter", "type": "devicon" },
+            { "key": "dart", "name": "Dart", "type": "devicon" }
+          ]
+        },
+                {
+          "title": "Flutter Developer",
+          "date": "Nov 2024 – Mar 2025",
+          "highlights": [
+            "Implemented core Flutter features and supported iOS deployment workflows."
+          ],
+          "stack": [
+            { "key": "flutter", "name": "Flutter", "type": "devicon" },
+            { "key": "dart", "name": "Dart", "type": "devicon" }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Amrita Mind and Brain Center, Amrita Vishwa Vidyapeetham",
+      "type": "Research",
+      "location": "Kollam, Kerala, India",
+      "date": "Jun 2024 – May 2025",
+      "positions": [
+        {
+          "title": "Research Intern / Research Assistant",
+          "date": "Jun 2024 – May 2025",
+          "highlights": [
+            "Built an IMU-based gait analysis system for Parkinson’s mobility analysis.",
+            "Designed a prototype ~99% cheaper than industry gait devices.",
+            "Trained LSTM time-series models achieving ~0.01% gait prediction error.",
+            "Built gait phase classifiers (RF/SVM/GB/LSTM): 99% accuracy; 87% Macro-F1; 99% Weighted-F1."
+          ],
+          "stack": [
+            { "key": "python", "name": "Python", "type": "devicon" },
+            { "key": "tensorflow", "name": "TensorFlow", "type": "devicon" }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Redantio Solutions Pvt Ltd",
+      "type": "R&D / Internship",
+      "location": "India",
+      "date": "Jul 2023 – Oct 2023",
+      "positions": [
+        {
+          "title": "Hardware Security Researcher",
+          "date": "Jul 2023 – Oct 2023",
+          "highlights": [
+            "Developed AI-based LoRa signal detection with real-time identification + frequency extraction.",
+            "Worked with SDR workflows, signal processing methods, and high-frequency design exposure."
+          ],
+          "stack": [
+            { "key": "python", "name": "Python", "type": "devicon" },
+            { "key": "linux", "name": "Linux", "type": "devicon" }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Ostello AI",
+      "type": "Internship / Startup",
+      "location": "New Delhi, Delhi, India",
+      "date": "Jun 2023 – Sep 2023",
+      "positions": [
+        {
+          "title": "Flutter Developer",
+          "date": "Jun 2023 – Sep 2023",
+          "highlights": [
+            "Built core mobile features, integrated REST APIs, and supported iOS/Android deployment.",
+            "Delivered authentication + chatbot/assessment workflows; supported early product iteration."
+          ],
+          "stack": [
+            { "key": "flutter", "name": "Flutter", "type": "devicon" },
+            { "key": "nodejs", "name": "Node.js", "type": "devicon" },
+            { "key": "firebase", "name": "Firebase", "type": "devicon" }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "CCExtractor",
+      "type": "Open Source",
+      "location": "Remote",
+      "date": "Feb 2023 – Jun 2023",
+      "positions": [
+        {
+          "title": "Open Source Contributor",
+          "date": "Feb 2023 – Jun 2023",
+          "highlights": [
+            "Contributed to Flutter projects: Taskwarrior-flutter, ccextractor-fluttergui, rutorrent-flutter, Flood Mobile.",
+            "Triaged issues, fixed bugs, and shipped improvements based on community reports."
+          ],
+          "stack": [
+            { "key": "flutter", "name": "Flutter", "type": "devicon" },
+            { "key": "git", "name": "Git", "type": "devicon" }
+          ]
+        }
+      ]
+    }
+  ]
+}
