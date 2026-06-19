@@ -14,7 +14,7 @@
 
   /* Chapter rail (sticky TOC) */
   .chapter-rail {
-    grid-row: 2 / -1;
+    grid-row: 2 / span 20;
     align-self: start;
     position: sticky;
     top: var(--space-12);
