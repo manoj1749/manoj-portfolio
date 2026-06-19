@@ -4,6 +4,12 @@
   const frameB  = document.getElementById('gif-frame-b');
   if (!overlay) return;
 
+  // On narrow viewports the photo is always visible — skip the animation
+  if (window.matchMedia('(max-width: 720px)').matches) {
+    overlay.style.display = 'none';
+    return;
+  }
+
   let gifFrame = 0;
   setInterval(() => {
     gifFrame ^= 1;
