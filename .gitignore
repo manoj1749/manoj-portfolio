@@ -125,3 +125,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Local reference copy — not part of this project
+lovable-portfolio/
+.gstack/
