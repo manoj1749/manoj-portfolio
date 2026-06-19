@@ -4,20 +4,18 @@
   const frameB  = document.getElementById('gif-frame-b');
   if (!overlay) return;
 
-  /* 2-frame hard-cut GIF at 500ms */
-  let frame = 0;
+  let gifFrame = 0;
   setInterval(() => {
-    frame ^= 1;
-    if (frameA) frameA.style.opacity = frame === 0 ? '1' : '0';
-    if (frameB) frameB.style.opacity = frame === 1 ? '1' : '0';
+    gifFrame ^= 1;
+    if (frameA) frameA.style.opacity = gifFrame === 0 ? '1' : '0';
+    if (frameB) frameB.style.opacity = gifFrame === 1 ? '1' : '0';
   }, 500);
 
-  /* Ease curve: cubic ease-in-out applied to the raw scroll progress.
-     Makes the shrink start gently, accelerate through the middle,
-     then settle softly into the About photo position. */
-  const ease = (t) => t < 0.5
-    ? 4 * t * t * t
-    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const ANIM_START = 0.05;  // fraction of heroH before animation begins
+  const FADE_AT    = 0.80;  // animation progress [0–1] at which cross-fade fires
+
+  // Ease-out cubic — moves immediately on first scroll, decelerates into position
+  const ease = (t) => 1 - Math.pow(1 - t, 3);
 
   let target     = null;
   let crossFired = false;
@@ -26,13 +24,11 @@
   const measure = () => {
     const photo = document.querySelector('.about-photo-wrap');
     if (!photo) return;
-    const r      = photo.getBoundingClientRect();
-    const docTop  = r.top  + window.scrollY;
-    const docLeft = r.left + window.scrollX;
-    const heroH   = window.innerHeight;
+    const r     = photo.getBoundingClientRect();
+    const heroH = window.innerHeight;
     target = {
-      toCX:  docLeft + r.width  / 2,
-      toCY:  (docTop - heroH)   + r.height / 2,
+      toCX:  r.left + window.scrollX + r.width  / 2,
+      toCY:  (r.top + window.scrollY - heroH) + r.height / 2,
       scale: r.height / heroH,
     };
   };
@@ -40,69 +36,78 @@
   setTimeout(measure, 200);
   window.addEventListener('resize', measure);
 
-  const resetOverlay = () => {
-    clearTimeout(hideTimer);
-    crossFired = false;
-    overlay.style.display    = '';
-    overlay.style.transition = '';
-    overlay.style.opacity    = '1';
-    overlay.style.transform  = '';
-    document.body.classList.remove('hero-done');
-
-    const txt = document.querySelector('.hero-text');
-    if (txt) txt.style.opacity = '1';
-  };
-
   const triggerCrossFade = () => {
     if (crossFired) return;
     crossFired = true;
-    overlay.style.transition = 'opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+    overlay.style.transition = 'opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
     overlay.style.opacity    = '0';
     document.body.classList.add('hero-done');
-    hideTimer = setTimeout(() => { overlay.style.display = 'none'; }, 700);
+    hideTimer = setTimeout(() => { overlay.style.display = 'none'; }, 600);
   };
 
-  window.addEventListener('scroll', () => {
-    const sy    = window.scrollY;
+  const txt = document.querySelector('.hero-text');
+  let scheduled = false;
+  let lastSy    = 0;
+
+  const tick = () => {
+    scheduled = false;
+    const sy    = lastSy;
     const heroH = window.innerHeight;
+    // Scroll Y at which cross-fade fires
+    const fadeSy = heroH * (ANIM_START + (1 - ANIM_START) * FADE_AT);
 
-    /* Back into hero from below */
-    if (crossFired && sy < heroH) { resetOverlay(); return; }
-
-    /* Past hero → cross-fade */
-    if (!crossFired && sy >= heroH) { triggerCrossFade(); return; }
+    // Scrolled back up past fade trigger — restore overlay without snapping to
+    // full-size: clear flags and fall through so animation code sets the transform
+    if (crossFired && sy < fadeSy) {
+      clearTimeout(hideTimer);
+      crossFired = false;
+      overlay.style.display    = '';
+      overlay.style.transition = '';
+      overlay.style.opacity    = '1';
+      document.body.classList.remove('hero-done');
+    }
 
     if (crossFired) return;
 
-    /* Hero text fades out from 10%–60% scroll */
-    const txt = document.querySelector('.hero-text');
+    // Hero text fades from 10% – 50% of hero height
     if (txt) {
-      const tp = Math.min(1, Math.max(0, (sy - heroH * 0.1) / (heroH * 0.5)));
-      txt.style.opacity = Math.max(0, 1 - tp).toFixed(3);
+      const tp = Math.min(1, Math.max(0, (sy - heroH * 0.1) / (heroH * 0.4)));
+      txt.style.opacity = (1 - tp).toFixed(3);
     }
 
-    /* First 10%: full-screen, no transform */
-    if (sy <= heroH * 0.1) {
+    if (sy <= heroH * ANIM_START) {
       overlay.style.transition = '';
       overlay.style.transform  = '';
       overlay.style.opacity    = '1';
       return;
     }
 
-    /* Shrink window: 10% → 100% of heroH */
-    const raw = (sy - heroH * 0.1) / (heroH * 0.9);   // 0 → 1 linear
-    const p   = ease(Math.min(1, raw));                  // eased
+    const raw = (sy - heroH * ANIM_START) / (heroH * (1 - ANIM_START));
+    const p   = Math.min(1, raw);
+    const ep  = ease(p);
 
     if (!target) { measure(); if (!target) return; }
 
-    const vw  = window.innerWidth;
-    const vh  = window.innerHeight;
-    const cur = 1 + (target.scale - 1) * p;
-    const tx  = (target.toCX - vw / 2) * p;
-    const ty  = (target.toCY - vh / 2) * p;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const sc = 1 + (target.scale - 1) * ep;
+    const tx = (target.toCX - vw / 2) * ep;
+    const ty = (target.toCY - vh / 2) * ep;
 
     overlay.style.transition = '';
+    overlay.style.transform  = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${sc.toFixed(4)})`;
     overlay.style.opacity    = '1';
-    overlay.style.transform  = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${cur.toFixed(4)})`;
+
+    // Fire cross-fade at 80% through — completes before hero scrolls out
+    if (p >= FADE_AT) {
+      triggerCrossFade();
+    }
+  };
+
+  window.addEventListener('scroll', () => {
+    lastSy = window.scrollY;
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(tick);
+    }
   }, { passive: true });
 })();

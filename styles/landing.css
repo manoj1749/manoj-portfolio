@@ -11,20 +11,6 @@
     overflow: hidden;
   }
 
-  /* Full-coverage gradient for text legibility.
-     z-index 21 puts it above the fixed GIF overlay (z:20)
-     and covers the full hero including the nav area at the top. */
-  .landing-hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 21;
-    background:
-      linear-gradient(to right,  rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.2) 60%, transparent 100%),
-      linear-gradient(to top,    rgba(5,5,5,0.65) 0%, transparent 55%),
-      linear-gradient(to bottom, rgba(5,5,5,0.5)  0%, transparent 35%);
-    pointer-events: none;
-  }
 
   /* Nav pinned to the top inside the hero */
   .hero-nav {
@@ -149,6 +135,20 @@
     z-index: 20;
     pointer-events: none;
     will-change: transform, opacity;
+  }
+
+  /* Gradient lives ON the overlay (not the hero) so it stays fixed
+     and never splits when the hero section scrolls away. */
+  .gif-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to right,  rgba(5,5,5,0.85) 0%, rgba(5,5,5,0.2) 60%, transparent 100%),
+      linear-gradient(to top,    rgba(5,5,5,0.65) 0%, transparent 55%),
+      linear-gradient(to bottom, rgba(5,5,5,0.5)  0%, transparent 35%);
+    pointer-events: none;
   }
 
   .gif-overlay img {
