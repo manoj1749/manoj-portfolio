@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}})()</script>
+  <title>Work &middot; Manoj Sadanala</title>
+  <meta name="description" content="Experience and projects spanning embedded firmware, applied ML, and mobile development.">
+  <link rel="preload" href="../fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/work.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="../">manoj</a>
+      <ul>
+        <li><a href="../work/" aria-current="page">Work</a></li>
+        <li><a href="../writing/">Writing</a></li>
+        <li><a href="../stack.html">Stack</a></li>
+        <li><button class="theme-toggle" type="button" data-theme-toggle aria-label="Theme: auto. Click to cycle.">auto</button></li>
+      </ul>
+    </nav>
+
+    <header class="work-header">
+      <p class="meta-line">Selected work</p>
+      <h1>Where I&rsquo;ve shipped.</h1>
+      <p class="lede">Embedded firmware, production apps, applied ML, and open source &mdash; the common thread is systems that actually get used.</p>
+    </header>
+
+    <aside class="chapter-rail aside-right" aria-label="Chapters">
+      <ol>
+        <li><a href="#wrs"><span class="rail-year">Feb 2026 &rarr; now</span><span class="rail-label">Stevens WRS Lab</span></a></li>
+        <li><a href="#goeleventh"><span class="rail-year">Nov 2024 &rarr; Jul 2025</span><span class="rail-label">Go Eleventh Mile</span></a></li>
+        <li><a href="#magnet"><span class="rail-year">Apr &rarr; Aug 2025</span><span class="rail-label">Magnet Power Tech</span></a></li>
+        <li><a href="#amrita"><span class="rail-year">Jun 2024 &rarr; May 2025</span><span class="rail-label">Amrita Mind Brain</span></a></li>
+        <li><a href="#redantio"><span class="rail-year">Jul &rarr; Oct 2023</span><span class="rail-label">Redantio</span></a></li>
+        <li><a href="#projects"><span class="rail-year">ongoing</span><span class="rail-label">Projects</span></a></li>
+      </ol>
+    </aside>
+
+    <!-- WRS Lab -->
+    <article class="org" id="wrs">
+      <header class="org-head">
+        <p class="org-meta">Feb 2026 &rarr; present &middot; Hardware / Firmware Research Assistant</p>
+        <h2>Stevens Institute of Technology &middot; WRS Lab</h2>
+      </header>
+      <p>Leading firmware development for wearable sensing systems used in gait monitoring, on <strong>ESP32</strong> and <strong>XIAO MG24</strong> platforms in C/C++. Work that lives a layer below the model &mdash; the data acquisition, signal conditioning, and transmission that makes the ML possible.</p>
+      <p>Cut SD card write latency from ~2000&thinsp;ms to ~535&thinsp;ms on XIAO MG24 by tracing the hardware bottleneck and recommending a platform migration. Reduced WiFi radio current draw by <strong>40&ndash;50%</strong> on a production ESP32-S3 system while maintaining continuous real-time UDP comms and SD logging. Serving as the lab&rsquo;s point of contact for the <strong>Simbex</strong> partnership.</p>
+    </article>
+
+    <!-- Go Eleventh Mile -->
+    <article class="org" id="goeleventh">
+      <header class="org-head">
+        <p class="org-meta">Nov 2024 &rarr; Jul 2025 &middot; iOS App Developer (Flutter)</p>
+        <h2>Go Eleventh Mile</h2>
+      </header>
+      <p>Built production Flutter (iOS) features on a ride-tracking platform with <strong>1,000+ users</strong>: real-time ride tracking, odometer verification, and Live Activities. Architecture: BLoC/Cubit with Clean Architecture; GetIt for DI. Integrations: Google Maps, Razorpay, Firebase Cloud Messaging, and Crashlytics. Managed the full App Store pipeline via TestFlight.</p>
+    </article>
+
+    <!-- Magnet Power Tech -->
+    <article class="org" id="magnet">
+      <header class="org-head">
+        <p class="org-meta">Apr &rarr; Aug 2025 &middot; Freelance Software Developer</p>
+        <h2>Magnet Power Tech Solutions</h2>
+      </header>
+      <p>Solo-built a 9-module Inventory Management System (Accounts, HR, Sales, Production, Quality Control, and more) for a manufacturing client. Stack: Flutter, Firebase (Auth + Firestore), offline-first design with local Hive storage and sync. <strong>358 commits</strong>. Production deployment maintained by the client.</p>
+    </article>
+
+    <!-- Amrita Mind Brain -->
+    <article class="org" id="amrita">
+      <header class="org-head">
+        <p class="org-meta">Jun 2024 &rarr; May 2025 &middot; Research Assistant</p>
+        <h2>Amrita Mind Brain Center</h2>
+      </header>
+      <p>Developed a wearable IMU-based gait analysis system for Parkinson&rsquo;s disease using ESP32 and MPU6050/BNO055 sensors with Kalman filter signal processing. Trained LSTM and ensemble classifiers achieving <strong>99% accuracy</strong> and <strong>87% Macro-F1</strong>. The paper based on this work is under review.</p>
+    </article>
+
+    <!-- Redantio -->
+    <article class="org" id="redantio">
+      <header class="org-head">
+        <p class="org-meta">Jul &rarr; Oct 2023 &middot; Hardware Security Researcher</p>
+        <h2>Redantio Solutions</h2>
+      </header>
+      <p>Contributed to a Wireless Forensics Framework R&amp;D effort. Built an AI-based system for real-time LoRa signal detection and frequency extraction using a feed-forward neural network, achieving <strong>~93% accuracy</strong>. Integrated the model with a Python SDR pipeline and a web GUI for live signal identification. This work led directly to the <a href="https://doi.org/10.1109/ICCCNT61001.2024.10725687" rel="noopener">IEEE ICCCNT 2024 paper</a>.</p>
+    </article>
+
+    <!-- Projects -->
+    <article class="org" id="projects">
+      <header class="org-head">
+        <p class="org-meta">Projects</p>
+        <h2>Things I&rsquo;ve built.</h2>
+      </header>
+
+      <ul class="project-list">
+        <li class="project-item">
+          <span class="project-name"><a href="https://github.com/manoj1749/ClaimCrane" rel="noopener">ClaimCrane</a></span>
+          <span class="project-year">2026</span>
+          <p class="project-summary">AI insurance fraud detection &mdash; two-stage pipeline: computer vision forensics (ELA, noise analysis, FFT, JPEG grid, EXIF) feeding a Gemma 3 27B vision-language model. <strong>1st Place, Chubb Track, Stevens QuackHacks 2026.</strong></p>
+          <ul class="project-tags">
+            <li>Python</li><li>FastAPI</li><li>React</li><li>Gemma 3 27B</li>
+          </ul>
+        </li>
+
+        <li class="project-item">
+          <span class="project-name">PolicyDiff</span>
+          <span class="project-year">2026</span>
+          <p class="project-summary">Policy document diffing tool. <strong>1st Place, ClickHouse Track, Agentic Engineering Hackathon by Tokens.</strong></p>
+          <ul class="project-tags">
+            <li>ClickHouse</li>
+          </ul>
+        </li>
+
+        <li class="project-item">
+          <span class="project-name">Tayba Manzil</span>
+          <span class="project-year">2023&ndash;2024</span>
+          <p class="project-summary">Flutter app: GPS-based prayer time engine, Qibla compass, Quran PDF viewer, push notifications, Arabic/English localization. <strong>10,000+ downloads, 1,000+ MAU.</strong> 189 of 221 commits.</p>
+          <ul class="project-tags">
+            <li>Flutter</li><li>Dart</li><li>Firebase</li><li>GitHub Actions</li>
+          </ul>
+        </li>
+
+        <li class="project-item">
+          <span class="project-name"><a href="https://github.com/manoj1749/LoRa-ResNET" rel="noopener">LoRaSense</a></span>
+          <span class="project-year">2023</span>
+          <p class="project-summary">CNN-based LoRa signal classifier. Spectrogram + ResNet, custom 4-device dataset with synthetic urban noise. <strong>89.47% real-time detection accuracy.</strong></p>
+          <ul class="project-tags">
+            <li>Python</li><li>PyTorch</li><li>CUDA</li>
+          </ul>
+        </li>
+
+        <li class="project-item">
+          <span class="project-name"><a href="https://github.com/manoj1749/lotusaura-boutique" rel="noopener">Lotus Aura Boutique</a></span>
+          <span class="project-year">2024&ndash;2025</span>
+          <p class="project-summary">Freelance e-commerce build. <strong>45+ production deployments on Vercel.</strong></p>
+          <ul class="project-tags">
+            <li>Next.js</li><li>TypeScript</li><li>Drizzle ORM</li><li>Turso</li><li>Tailwind v4</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <footer class="site-footer">
+      <span>&copy; 2026 Manoj Parasuram Sadanala</span>
+      <span>
+        <a href="https://github.com/manoj1749" rel="noopener">GitHub</a> &middot;
+        <a href="https://linkedin.com/in/manojsadanala" rel="noopener">LinkedIn</a> &middot;
+        <a href="mailto:msadanal@stevens.edu">Email</a>
+      </span>
+      <a href="../stack.html">Stack</a>
+    </footer>
+  </main>
+  <script type="module" src="../scripts/theme.js"></script>
+</body>
+</html>
