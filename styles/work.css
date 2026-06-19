@@ -91,6 +91,26 @@
   .org > p strong { color: var(--color-fg); font-weight: 600; }
   .org > p:last-child { margin-bottom: 0; }
 
+  /* Per-role section within a multi-role org entry */
+  .org-role {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .org-role .org-meta { margin-bottom: var(--space-3); }
+
+  .org-role p {
+    line-height: var(--leading-relaxed);
+    max-width: 64ch;
+    margin-block: var(--space-4);
+    font-size: var(--text-md);
+    color: var(--color-fg-muted);
+  }
+
+  .org-role p strong { color: var(--color-fg); font-weight: 600; }
+  .org-role p:last-child { margin-bottom: 0; }
+
   /* Project cards within an org */
   .project-list {
     list-style: none;
