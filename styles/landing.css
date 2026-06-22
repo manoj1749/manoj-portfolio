@@ -135,6 +135,7 @@
     z-index: 20;
     pointer-events: none;
     will-change: transform, opacity;
+    overflow: hidden;
   }
 
   /* Gradient lives ON the overlay (not the hero) so it stays fixed
@@ -251,5 +252,6 @@
     .about-photo { aspect-ratio: 4/3; opacity: 1 !important; }
     .hero-text { padding-bottom: 3.5rem; }
     .hero-nav { padding: var(--space-4) var(--gutter); }
+
   }
 }

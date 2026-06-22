@@ -4,12 +4,6 @@
   const frameB  = document.getElementById('gif-frame-b');
   if (!overlay) return;
 
-  // On narrow viewports the photo is always visible — skip the animation
-  if (window.matchMedia('(max-width: 720px)').matches) {
-    overlay.style.display = 'none';
-    return;
-  }
-
   let gifFrame = 0;
   setInterval(() => {
     gifFrame ^= 1;
@@ -17,15 +11,20 @@
     if (frameB) frameB.style.opacity = gifFrame === 1 ? '1' : '0';
   }, 500);
 
-  const ANIM_START = 0.05;  // fraction of heroH before animation begins
-  const FADE_AT    = 0.80;  // animation progress [0–1] at which cross-fade fires
+  const ANIM_START    = 0.05;
+  const FADE_AT       = 0.80;
+  const MOBILE_FADE   = 0.55;
 
-  // Ease-out cubic — moves immediately on first scroll, decelerates into position
   const ease = (t) => 1 - Math.pow(1 - t, 3);
 
   let target     = null;
   let crossFired = false;
   let hideTimer  = null;
+
+  const resetFrames = () => {
+    if (frameA) frameA.style.transform = '';
+    if (frameB) frameB.style.transform = '';
+  };
 
   const measure = () => {
     const photo = document.querySelector('.about-photo-wrap');
@@ -45,6 +44,7 @@
   const triggerCrossFade = () => {
     if (crossFired) return;
     crossFired = true;
+    resetFrames();
     overlay.style.transition = 'opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
     overlay.style.opacity    = '0';
     document.body.classList.add('hero-done');
@@ -57,13 +57,12 @@
 
   const tick = () => {
     scheduled = false;
-    const sy    = lastSy;
-    const heroH = window.innerHeight;
-    // Scroll Y at which cross-fade fires
-    const fadeSy = heroH * (ANIM_START + (1 - ANIM_START) * FADE_AT);
+    const sy       = lastSy;
+    const heroH    = window.innerHeight;
+    const mobile   = window.innerWidth <= 720;
+    const fadePt   = mobile ? MOBILE_FADE : FADE_AT;
+    const fadeSy   = heroH * (ANIM_START + (1 - ANIM_START) * fadePt);
 
-    // Scrolled back up past fade trigger — restore overlay without snapping to
-    // full-size: clear flags and fall through so animation code sets the transform
     if (crossFired && sy < fadeSy) {
       clearTimeout(hideTimer);
       crossFired = false;
@@ -75,7 +74,6 @@
 
     if (crossFired) return;
 
-    // Hero text fades from 10% – 50% of hero height
     if (txt) {
       const tp = Math.min(1, Math.max(0, (sy - heroH * 0.1) / (heroH * 0.4)));
       txt.style.opacity = (1 - tp).toFixed(3);
@@ -85,6 +83,7 @@
       overlay.style.transition = '';
       overlay.style.transform  = '';
       overlay.style.opacity    = '1';
+      resetFrames();
       return;
     }
 
@@ -95,18 +94,26 @@
     if (!target) { measure(); if (!target) return; }
 
     const vw = window.innerWidth, vh = window.innerHeight;
-    const sc = 1 + (target.scale - 1) * ep;
     const tx = (target.toCX - vw / 2) * ep;
     const ty = (target.toCY - vh / 2) * ep;
 
+    if (mobile) {
+      // On mobile: overlay translates without shrinking so landscape stays full quality.
+      // Counter-translate the images so the landscape pans (revealing different parts)
+      // as the overlay slides toward the about-photo.
+      overlay.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px)`;
+      if (frameA) frameA.style.transform = `translate(${(-tx).toFixed(1)}px,${(-ty).toFixed(1)}px)`;
+      if (frameB) frameB.style.transform = `translate(${(-tx).toFixed(1)}px,${(-ty).toFixed(1)}px)`;
+    } else {
+      const sc = 1 + (target.scale - 1) * ep;
+      overlay.style.transform = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${sc.toFixed(4)})`;
+      resetFrames();
+    }
+
     overlay.style.transition = '';
-    overlay.style.transform  = `translate(${tx.toFixed(1)}px,${ty.toFixed(1)}px) scale(${sc.toFixed(4)})`;
     overlay.style.opacity    = '1';
 
-    // Fire cross-fade at 80% through — completes before hero scrolls out
-    if (p >= FADE_AT) {
-      triggerCrossFade();
-    }
+    if (p >= fadePt) triggerCrossFade();
   };
 
   window.addEventListener('scroll', () => {
