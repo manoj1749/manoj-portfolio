@@ -245,6 +245,80 @@
 
   .quick-links { list-style: none; padding: 0; margin: 0; font-size: var(--text-md); }
 
+  /* ── Hero CTAs ───────────────────────────────────────────── */
+  .hero-ctas {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-primary {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(244, 242, 238, 0.85);
+    border: 1px solid rgba(244, 242, 238, 0.25);
+    border-radius: 4px;
+    padding: 0.45em 1em;
+    text-decoration: none;
+    transition: border-color var(--duration-fast) var(--ease-out),
+                color var(--duration-fast) var(--ease-out),
+                background var(--duration-fast) var(--ease-out);
+  }
+
+  .hero-cta-primary:hover {
+    border-color: rgba(244, 242, 238, 0.6);
+    color: rgba(244, 242, 238, 1);
+    background: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+  }
+
+  .hero-cta-secondary {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(200, 198, 192, 0.45);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .hero-cta-secondary:hover {
+    color: rgba(244, 242, 238, 0.8);
+    text-decoration: none;
+  }
+
+  /* ── Metrics strip ───────────────────────────────────────── */
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    padding-block: var(--space-8);
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .metric { display: flex; flex-direction: column; gap: var(--space-1); }
+
+  .metric-value {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-fg);
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-fg-subtle);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
   /* ── Responsive ──────────────────────────────────────────── */
   @media (max-width: 720px) {
     .about-layout { grid-template-columns: 1fr; }
@@ -252,6 +326,6 @@
     .about-photo { aspect-ratio: 4/3; opacity: 1 !important; }
     .hero-text { padding-bottom: 3.5rem; }
     .hero-nav { padding: var(--space-4) var(--gutter); }
-
+    .metrics-strip { grid-template-columns: repeat(2, 1fr); }
   }
 }
